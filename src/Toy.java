@@ -5,12 +5,7 @@ public class Toy extends Thread {
 
     @Override
     public void run() {
-        try {
-            turnOffTheButton();
-            Thread.sleep(100);
-        } catch (InterruptedException ie) {
-            Thread.currentThread().interrupt();
-        }
+        turnOffTheButton();
     }
 
     public void turnOffTheButton() {
@@ -21,7 +16,6 @@ public class Toy extends Thread {
                     user.setClicker(false);
                     System.out.println("Игрушка сбросила нажатие пользователя");
                 }
-
             } catch (InterruptedException ie) {
                 ie.printStackTrace();
             }
